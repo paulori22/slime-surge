@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://duyq8i1gdm04p"]
+
+[ext_resource type="Script" uid="uid://yevc7lkvnxl0" path="res://upgrades/upgrade.gd" id="1_fl8fh"]
+
+[resource]
+script = ExtResource("1_fl8fh")
+title = "Loot Magnet"
+description = "Increase pickup range by 50"
+stat_to_change = "pickup_range"
+change_amount = 50.0
+metadata/_custom_type_script = "uid://yevc7lkvnxl0"

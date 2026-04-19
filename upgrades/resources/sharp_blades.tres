@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://8v5550ifmi0s"]
+
+[ext_resource type="Script" uid="uid://yevc7lkvnxl0" path="res://upgrades/upgrade.gd" id="1_ors4v"]
+
+[resource]
+script = ExtResource("1_ors4v")
+title = "Sharpen"
+description = "Increase base damage by 5"
+stat_to_change = "damage"
+change_amount = 5.0
+metadata/_custom_type_script = "uid://yevc7lkvnxl0"

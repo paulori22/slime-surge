@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://dlext5i0hfe3r"]
+
+[ext_resource type="Script" uid="uid://yevc7lkvnxl0" path="res://upgrades/upgrade.gd" id="1_ie4kx"]
+
+[resource]
+script = ExtResource("1_ie4kx")
+title = "Running Shoes"
+description = "+15% Speed"
+stat_to_change = "move_speed"
+change_amount = 0.15
+is_percentage = true
+metadata/_custom_type_script = "uid://yevc7lkvnxl0"

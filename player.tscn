@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c1sx7bic4uhdj"]
+
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://du5i8r7jdycua" path="res://gun.tscn" id="3_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 34.525352
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
+bg_color = Color(0.15294118, 0.16862746, 0.1882353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqtel"]
+bg_color = Color(0.2043998, 0.6993546, 0.49028075, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
+radius = 200.0
+
+[node name="Player" type="CharacterBody2D" unique_id=102368295]
+script = ExtResource("1_onrkg")
+
+[node name="HappyBoo" parent="." unique_id=1091727253 instance=ExtResource("1_4flbx")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=835375734]
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=93708235]
+
+[node name="Gun" parent="." unique_id=1549053321 instance=ExtResource("3_i3pqv")]
+position = Vector2(1, -37)
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=804815498]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1525583415]
+shape = SubResource("CircleShape2D_i3pqv")
+debug_color = Color(0.9538116, 0.20198628, 0.20858747, 0.41960785)
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=862716581]
+unique_name_in_owner = true
+offset_left = -83.0
+offset_top = 36.0
+offset_right = 92.0
+offset_bottom = 63.0
+theme_override_styles/background = SubResource("StyleBoxFlat_i3pqv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hqtel")
+value = 100.0
+show_percentage = false
+
+[node name="PickupRange" type="Area2D" parent="." unique_id=707609418]
+collision_mask = 5
+
+[node name="PickupRangeCollisionShape" type="CollisionShape2D" parent="PickupRange" unique_id=1805120146]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_hqtel")
+
+[connection signal="area_entered" from="PickupRange" to="." method="_on_pickup_range_area_entered"]

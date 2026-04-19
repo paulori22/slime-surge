@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://b72in1jhxmetu"]
+
+[ext_resource type="Script" uid="uid://dm5pnsjn3qygl" path="res://time_display.gd" id="1_cs3pk"]
+[ext_resource type="Texture2D" uid="uid://wvulxc5pehw1" path="res://player_hud/kill_icon.png" id="1_tvw2b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sskr"]
+bg_color = Color(0.4392157, 0.5647059, 0.74509805, 0.5411765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvw2b"]
+bg_color = Color(0.19290781, 0.3877734, 0.5469818, 1)
+
+[node name="PlayerHUD" type="CanvasLayer" unique_id=258915343]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=748595278]
+offset_right = 73.0
+offset_bottom = 24.0
+color = Color(0.45452422, 0.45452428, 0.45452422, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1915447611]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 28.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=284444638]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_5sskr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tvw2b")
+show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ProgressBar" unique_id=240131697]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 74.0
+offset_bottom = 11.5
+grow_vertical = 2
+
+[node name="LevelLabel" type="Label" parent="VBoxContainer/ProgressBar/HBoxContainer" unique_id=1233109869]
+layout_mode = 2
+text = "Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentLevelValue" type="Label" parent="VBoxContainer/ProgressBar/HBoxContainer" unique_id=226005883]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExperienceLabel" type="Label" parent="VBoxContainer/ProgressBar" unique_id=1408595381]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9250001
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -0.00012207031
+offset_top = -13.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "0/200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=2001214527]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="TimeDisplay" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1637931269]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_cs3pk")
+
+[node name="Space" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=199374926]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="KilledEnemiesIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=291821809]
+layout_mode = 2
+texture = ExtResource("1_tvw2b")
+expand_mode = 3
+
+[node name="CurrentKilledEnemiesValue" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1099014549]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

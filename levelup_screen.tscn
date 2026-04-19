@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://bipl8gk5ixr7"]
+
+[ext_resource type="Script" uid="uid://4sgh0l3obo0d" path="res://levelup_screen.gd" id="1_110yr"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2027328737]
+process_mode = 3
+script = ExtResource("1_110yr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1389597388]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 263.0
+offset_right = 8.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.52156866)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1078833211]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Choose your Upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeGrid" type="HBoxContainer" parent="ColorRect" unique_id=981488282]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -962.5
+offset_top = -187.5
+offset_right = 962.5
+offset_bottom = 293.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="UpgradeBtn1" type="Button" parent="ColorRect/UpgradeGrid" unique_id=2125119378]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 60
+text = "
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/UpgradeGrid/UpgradeBtn1" unique_id=62291876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="ColorRect/UpgradeGrid/UpgradeBtn1/VBoxContainer" unique_id=1267873281]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="ColorRect/UpgradeGrid/UpgradeBtn1/VBoxContainer" unique_id=634450464]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Descriptionfd"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="UpgradeBtn2" type="Button" parent="ColorRect/UpgradeGrid" unique_id=1092032613]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 60
+text = "
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/UpgradeGrid/UpgradeBtn2" unique_id=226957180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="ColorRect/UpgradeGrid/UpgradeBtn2/VBoxContainer" unique_id=437159859]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="ColorRect/UpgradeGrid/UpgradeBtn2/VBoxContainer" unique_id=1113350707]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Descriptionfd"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="UpgradeBtn3" type="Button" parent="ColorRect/UpgradeGrid" unique_id=227093693]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 60
+text = "
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/UpgradeGrid/UpgradeBtn3" unique_id=1726793012]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="ColorRect/UpgradeGrid/UpgradeBtn3/VBoxContainer" unique_id=1246056821]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="ColorRect/UpgradeGrid/UpgradeBtn3/VBoxContainer" unique_id=1142112618]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Descriptionfd"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://pqy4u3k6p43a"]
+
+[ext_resource type="Script" uid="uid://b1vongfqqfd2w" path="res://ui/damage_label.gd" id="1_iprbo"]
+
+[node name="DamageLabel" type="Label" unique_id=1281899707]
+z_index = 10
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.4509804, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_iprbo")

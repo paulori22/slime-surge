@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradePool" format=3 uid="uid://djohhhhv0212"]
+
+[ext_resource type="Script" uid="uid://b7s3i5dbkwsms" path="res://upgrades/upgrade_pool.gd" id="1_oj4ah"]
+[ext_resource type="Script" uid="uid://yevc7lkvnxl0" path="res://upgrades/upgrade.gd" id="2_be5x8"]
+[ext_resource type="Resource" uid="uid://bw0xi6yelcbrc" path="res://upgrades/resources/extra_bullet.tres" id="3_um5vl"]
+[ext_resource type="Resource" uid="uid://dcp2uw5f4msmq" path="res://upgrades/resources/fast_hands.tres" id="4_xh5oc"]
+[ext_resource type="Resource" uid="uid://dls32aywcumnh" path="res://upgrades/resources/heavy_hitter.tres" id="5_8mln4"]
+[ext_resource type="Resource" uid="uid://duyq8i1gdm04p" path="res://upgrades/resources/magnet.tres" id="6_n7tvu"]
+[ext_resource type="Resource" uid="uid://8v5550ifmi0s" path="res://upgrades/resources/sharp_blades.tres" id="7_lwwmi"]
+[ext_resource type="Resource" uid="uid://ce2e8dbxa45uy" path="res://upgrades/resources/max_hp_upgrade.tres" id="8_xh5oc"]
+[ext_resource type="Resource" uid="uid://dlext5i0hfe3r" path="res://upgrades/resources/running_shoes.tres" id="9_8mln4"]
+
+[resource]
+script = ExtResource("1_oj4ah")
+upgrades = Array[ExtResource("2_be5x8")]([ExtResource("3_um5vl"), ExtResource("4_xh5oc"), ExtResource("5_8mln4"), ExtResource("6_n7tvu"), ExtResource("7_lwwmi"), ExtResource("8_xh5oc"), ExtResource("9_8mln4")])
+metadata/_custom_type_script = "uid://b7s3i5dbkwsms"

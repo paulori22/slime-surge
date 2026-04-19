@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://ce2e8dbxa45uy"]
+
+[ext_resource type="Script" uid="uid://yevc7lkvnxl0" path="res://upgrades/upgrade.gd" id="1_rflde"]
+
+[resource]
+script = ExtResource("1_rflde")
+title = "Vitality"
+description = "Increases Max HP by 20"
+stat_to_change = "max_health"
+change_amount = 20.0
+metadata/_custom_type_script = "uid://yevc7lkvnxl0"

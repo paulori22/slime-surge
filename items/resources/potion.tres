@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dr6pvduvohg31"]
+
+[ext_resource type="Texture2D" uid="uid://bdi5sbmd1rad6" path="res://items/potion.png" id="1_5rmqu"]
+[ext_resource type="Script" uid="uid://ccikrs63tf3tk" path="res://items/item.gd" id="2_lykd8"]
+
+[resource]
+script = ExtResource("2_lykd8")
+title = "Potion"
+type = 1
+value = 50.0
+icon = ExtResource("1_5rmqu")
+sprite_scale = 0.1
+collision_radius = 20.0
+metadata/_custom_type_script = "uid://ccikrs63tf3tk"

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dv35ll8j10fsk"]
+
+[ext_resource type="Script" uid="uid://bwr0d264p7on2" path="res://autoloader/player_data.gd" id="1_scn5y"]
+[ext_resource type="Script" uid="uid://ccikrs63tf3tk" path="res://items/item.gd" id="2_o4i81"]
+[ext_resource type="Resource" uid="uid://wxl54epkve7g" path="res://items/resources/magnet.tres" id="3_spqkh"]
+[ext_resource type="Resource" uid="uid://b5t0s71dkps8l" path="res://items/resources/food.tres" id="4_r54se"]
+[ext_resource type="Resource" uid="uid://dr6pvduvohg31" path="res://items/resources/potion.tres" id="5_ml4nt"]
+
+[node name="PlayerData" type="Node" unique_id=1819966438]
+script = ExtResource("1_scn5y")
+drop_table = Array[ExtResource("2_o4i81")]([ExtResource("3_spqkh"), ExtResource("4_r54se"), ExtResource("5_ml4nt")])

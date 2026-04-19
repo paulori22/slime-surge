@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Editor / crash backups
+*.tmp
+*~
+
+# Godot: Windows may create a tilde-prefixed copy while a native editor plugin DLL is locked
+**/windows/~*.dll
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

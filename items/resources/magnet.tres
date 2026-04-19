@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://wxl54epkve7g"]
+
+[ext_resource type="Script" uid="uid://ccikrs63tf3tk" path="res://items/item.gd" id="1_00sof"]
+[ext_resource type="Texture2D" uid="uid://dsh5jbxvuprw8" path="res://items/magnet.png" id="1_x4b0v"]
+
+[resource]
+script = ExtResource("1_00sof")
+title = "Magnet"
+drop_weight = 3
+icon = ExtResource("1_x4b0v")
+sprite_scale = 0.1
+collision_radius = 20.0
+metadata/_custom_type_script = "uid://ccikrs63tf3tk"

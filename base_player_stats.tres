@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerStats" format=3 uid="uid://dg6bg6ncwpqu7"]
+
+[ext_resource type="Script" uid="uid://cbqq4kpgnlui7" path="res://player_stat.gd" id="1_rotf5"]
+
+[resource]
+script = ExtResource("1_rotf5")
+pickup_range = 200.0
+metadata/_custom_type_script = "uid://cbqq4kpgnlui7"
