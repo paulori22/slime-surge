@@ -5,6 +5,8 @@ const EXP: int = 20
 var health = 60.0
 
 var is_dead: bool
+var player_in_range: bool = false
+const FIRE_DAMAGE: float = 5.0
 
 @onready var player = get_node("/root/Game/Player")
 @export_range(0, 1.0) var drop_item_rate: float = 0.05 # 5% chance
@@ -14,6 +16,25 @@ const DAMAGE_LABEL_SCENE = preload("res://ui/damage_label.tscn")
 
 func _ready() -> void:
 	%FireSlime.play_walk()
+	$BurnZone/Timer.timeout.connect(_on_timer_timeout)
+
+func _on_burn_zone_body_entered(body):
+	print("On burn zone: ", body.name)
+	if body.is_in_group("player"):
+		player_in_range = true
+		$BurnZone/Timer.start() # Start burning when player enters
+
+func _on_burn_zone_body_exited(body):
+	if body.is_in_group("player"):
+		player_in_range = false
+		$BurnZone/Timer.stop() # Stop burning when player leaves
+
+func _on_timer_timeout():
+	print("Timeout reached: ", player_in_range)
+	if player_in_range:
+		# Damage the player
+		GameEvents.player_took_damage.emit(FIRE_DAMAGE)
+		player.fire_damage_effect()
 
 func _physics_process(delta: float) -> void:
 		var direction = global_position.direction_to(player.global_position)

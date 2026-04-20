@@ -37,6 +37,7 @@ func _ready():
 	reset_to_base_stats()
 	GameEvents.experience_gained.connect(_on_exp_gained)
 	GameEvents.enemy_died.connect(_on_enemy_died)
+	GameEvents.player_took_damage.connect(_on_took_damage)
 
 func reset_to_base_stats():
 	max_health = base_stats.max_health
@@ -138,3 +139,6 @@ func get_random_item() -> Item:
 			return item
 			
 	return null
+
+func _on_took_damage(amount: float):
+	current_health -= amount

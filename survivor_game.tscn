@@ -86,11 +86,11 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 156
 text = "Game Over"
 
-[node name="Mob" parent="." unique_id=1657029040 instance=ExtResource("6_d0dif")]
-position = Vector2(689, 327)
+[node name="FireMob" parent="." unique_id=1657029040 instance=ExtResource("6_d0dif")]
+position = Vector2(546, 239)
 
-[node name="Mob2" parent="." unique_id=675962286 instance=ExtResource("6_d0dif")]
-position = Vector2(1023, 274)
+[node name="FireMob2" parent="." unique_id=1753279423 instance=ExtResource("6_d0dif")]
+position = Vector2(907, 145)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

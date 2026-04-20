@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bymqsbesg6vrf" path="res://enemies/fire_slime.tscn" id="2_63mpx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dy6sc"]
-radius = 53.08484
+radius = 55.108982
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oanne"]
+radius = 83.86298
 
 [node name="FireMob" type="CharacterBody2D" unique_id=1657029040]
 collision_layer = 2
@@ -17,3 +20,16 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=630758679]
 position = Vector2(0, -29)
 shape = SubResource("CircleShape2D_dy6sc")
+
+[node name="BurnZone" type="Area2D" parent="." unique_id=1360128552]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurnZone" unique_id=1024885183]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_oanne")
+
+[node name="Timer" type="Timer" parent="BurnZone" unique_id=689833584]
+wait_time = 0.5
+
+[connection signal="body_entered" from="BurnZone" to="." method="_on_burn_zone_body_entered"]
+[connection signal="body_exited" from="BurnZone" to="." method="_on_burn_zone_body_exited"]
+[connection signal="body_shape_entered" from="BurnZone" to="." method="_on_burn_zone_body_shape_entered"]

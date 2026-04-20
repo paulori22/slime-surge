@@ -31,5 +31,4 @@ func apply_effect(body: Node2D):
 			
 		Item.ItemType.MAGNET:
 			# Signal all experience gems to fly to the player
-			print("Magnet called!")
 			get_tree().call_group("experience_gems", "start_magnet", body)
