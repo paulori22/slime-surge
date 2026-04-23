@@ -5,8 +5,21 @@ var player = null
 var speed = 0
 var is_collected: bool = false
 
+@onready var sprite: Sprite2D = $Sprite2D
+
 func _ready():
 	add_to_group("experience_gems")
+	_update_gem_color()
+
+
+func _update_gem_color() -> void:
+	# Map XP to tint (base texture is green; modulate shifts hue/sat for higher drops).
+	const MIN_XP := 5.0
+	const MAX_XP := 90.0
+	var t: float = clampf((float(experience_value) - MIN_XP) / (MAX_XP - MIN_XP), 0.0, 1.0)
+	var lo := Color.from_hsv(0.36, 0.42, 1.0)
+	var hi := Color.from_hsv(0.78, 0.85, 1.0)
+	sprite.modulate = lo.lerp(hi, t)
 
 func start_magnet(target_player):
 	player = target_player

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b7k2c8n4mhqws"]
+
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_boss"]
+
+[sub_resource type="Gradient" id="Gradient_boss"]
+offsets = PackedFloat32Array(0.19424461, 0.55755395, 1)
+colors = PackedColorArray(0.5603495, 0.5002551, 0.16710055, 0.6389043, 0.6095263, 0.25594875, 0.19488394, 0.82751226, 0.05, 0, 0.12, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture_boss"]
+gradient = SubResource("Gradient_boss")
+
+[sub_resource type="Curve" id="Curve_boss"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_boss"]
+curve = SubResource("Curve_boss")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_boss"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 90.0
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, -1, 0)
+spread = 20.0
+initial_velocity_min = 50.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, -200, 0)
+scale_min = 2.5
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_boss")
+color_ramp = SubResource("GradientTexture_boss")
+
+[node name="BossSlimeSkin" unique_id=2008890567 instance=ExtResource("1_boss")]
+
+[node name="SlimeBody" parent="Anchor" parent_id_path=PackedInt32Array(794902193) index="0" unique_id=1727508908]
+modulate = Color(0.42, 0.12, 0.62, 1)
+
+[node name="SlimeFace" parent="Anchor/Face" parent_id_path=PackedInt32Array(1541035147) index="0" unique_id=403368551]
+modulate = Color(0.85, 0.72, 0.2, 1)
+
+[node name="BossAura" type="GPUParticles2D" parent="." index="3" unique_id=601934347]
+position = Vector2(0, -21)
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_boss")

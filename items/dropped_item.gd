@@ -25,9 +25,10 @@ func _on_body_entered(body: Node2D):
 func apply_effect(body: Node2D):
 	match data.type:
 		Item.ItemType.HEAL:
-			# Direct access to player's health variable
-			body.current_health += data.value
-			body.update_current_health_bar_value()
+			if body.is_in_group("player"):
+				# Direct access to player's health variable
+				PlayerData.current_health += data.value
+				body.update_current_health_bar_value()
 			
 		Item.ItemType.MAGNET:
 			# Signal all experience gems to fly to the player

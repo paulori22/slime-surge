@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dg46573q4whtq"]
+
+[ext_resource type="Script" uid="uid://dviqvpkvdutnd" path="res://enemies/projectiles/water_projectile.gd" id="1_16ktw"]
+[ext_resource type="Texture2D" uid="uid://jklk3pdq4dey" path="res://enemies/projectiles/water_projectile.png" id="1_o76js"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oha4r"]
+radius = 37.054016
+
+[node name="WaterProjectile" type="Area2D" unique_id=1104833351]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_16ktw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=710753867]
+position = Vector2(9, 0)
+scale = Vector2(0.16925912, 0.16925912)
+texture = ExtResource("1_o76js")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1225835266]
+shape = SubResource("CircleShape2D_oha4r")
+
+[node name="Timer" type="Timer" parent="." unique_id=413804403]
+wait_time = 2.0

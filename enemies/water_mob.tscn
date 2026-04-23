@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bpl5ev8y1dsm3"]
+
+[ext_resource type="Script" uid="uid://cf7y5enlbco5n" path="res://enemies/water_mob.gd" id="1_isnii"]
+[ext_resource type="PackedScene" uid="uid://qjmnxv3odm1b" path="res://enemies/water_slime.tscn" id="2_isnii"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dy6sc"]
+radius = 55.108982
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oanne"]
+radius = 800.0
+
+[node name="WaterMob" type="CharacterBody2D" unique_id=1657029040]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_isnii")
+
+[node name="WaterSlime" parent="." unique_id=2008890567 instance=ExtResource("2_isnii")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=630758679]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_dy6sc")
+
+[node name="ShootRange" type="Area2D" parent="." unique_id=1360128552]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShootRange" unique_id=1024885183]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_oanne")
+
+[node name="ShootTimer" type="Timer" parent="ShootRange" unique_id=689833584]
+wait_time = 2.0
+
+[connection signal="body_entered" from="ShootRange" to="." method="_on_shoot_range_body_entered"]
+[connection signal="body_exited" from="ShootRange" to="." method="_on_shoot_range_body_exited"]

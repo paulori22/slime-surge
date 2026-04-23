@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b72in1jhxmetu" path="res://player_hud.tscn" id="2_5mrb7"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_8id3q"]
 [ext_resource type="Script" uid="uid://mpxxs25ru2pa" path="res://player_hud.gd" id="3_i54c3"]
-[ext_resource type="PackedScene" uid="uid://ljt31xfhte7t" path="res://enemies/fire_mob.tscn" id="6_d0dif"]
+[ext_resource type="PackedScene" uid="uid://cqhtx7584xsto" path="res://enemies/boss_slime.tscn" id="6_d0dif"]
 
 [sub_resource type="Curve2D" id="Curve2D_kbdm8"]
 _data = {
@@ -38,6 +38,9 @@ curve = SubResource("Curve2D_kbdm8")
 unique_name_in_owner = true
 position = Vector2(-111, -91)
 rotation = 0.00095785415
+
+[node name="Enemies" type="Node2D" parent="." unique_id=-1906078408]
+y_sort_enabled = true
 
 [node name="Pine Tree" parent="." unique_id=578105668 instance=ExtResource("2_8id3q")]
 position = Vector2(99, 175)
@@ -86,11 +89,11 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 156
 text = "Game Over"
 
-[node name="FireMob" parent="." unique_id=1657029040 instance=ExtResource("6_d0dif")]
-position = Vector2(546, 239)
+[node name="BossSlime" parent="." unique_id=1657029040 instance=ExtResource("6_d0dif")]
+position = Vector2(613, 454)
 
-[node name="FireMob2" parent="." unique_id=1753279423 instance=ExtResource("6_d0dif")]
-position = Vector2(907, 145)
+[node name="BossSlime2" parent="." unique_id=98521883 instance=ExtResource("6_d0dif")]
+position = Vector2(540, 697)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

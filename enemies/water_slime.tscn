@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://qjmnxv3odm1b"]
+
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="2_w8wmb"]
+
+[sub_resource type="Gradient" id="Gradient_34jt0"]
+offsets = PackedFloat32Array(0.46043167, 1)
+colors = PackedColorArray(0.0627451, 0.69803923, 0.9372549, 0.5058824, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oatcb"]
+gradient = SubResource("Gradient_34jt0")
+
+[sub_resource type="Curve" id="Curve_34jt0"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oatcb"]
+curve = SubResource("Curve_34jt0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_34jt0"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 50.0
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 10, 0)
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_oatcb")
+color_ramp = SubResource("GradientTexture1D_oatcb")
+
+[node name="WaterSlime" unique_id=2008890567 instance=ExtResource("2_w8wmb")]
+
+[node name="SlimeBody" parent="Anchor" parent_id_path=PackedInt32Array(794902193) index="0" unique_id=1727508908]
+modulate = Color(0, 0.14901961, 1, 1)
+
+[node name="SlimeFace" parent="Anchor/Face" parent_id_path=PackedInt32Array(1541035147) index="0" unique_id=403368551]
+modulate = Color(0.15294118, 0.16862746, 0.1882353, 1)
+
+[node name="WaterParticles" type="GPUParticles2D" parent="." index="3" unique_id=601934347]
+position = Vector2(0, -21)
+amount = 30
+collision_base_size = 40.0
+process_material = SubResource("ParticleProcessMaterial_34jt0")

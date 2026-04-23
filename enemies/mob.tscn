@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://y38gte5o0xf8"]
 
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_dy6sc"]
-[ext_resource type="Script" uid="uid://d07l5xwryn2cx" path="res://mob.gd" id="1_nokgg"]
+[ext_resource type="Script" uid="uid://d07l5xwryn2cx" path="res://enemies/mob.gd" id="1_nokgg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dy6sc"]
 radius = 53.08484

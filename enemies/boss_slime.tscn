@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cqhtx7584xsto"]
+
+[ext_resource type="Script" uid="uid://d4n8k2q7a1b3c4" path="res://enemies/boss_slime.gd" id="1_boss"]
+[ext_resource type="PackedScene" uid="uid://b7k2c8n4mhqws" path="res://enemies/boss_slime_skin.tscn" id="2_boss"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_boss"]
+radius = 96.0
+
+[node name="BossSlime" type="CharacterBody2D" unique_id=1657029040]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_boss")
+
+[node name="Slime" parent="." unique_id=2008890567 instance=ExtResource("2_boss")]
+unique_name_in_owner = true
+scale = Vector2(1.75, 1.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=630758679]
+position = Vector2(0, -51)
+shape = SubResource("CircleShape2D_boss")
